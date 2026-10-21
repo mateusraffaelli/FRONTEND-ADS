@@ -7,13 +7,13 @@
 
 ## FE I
 ### Listas
-- [Lista 01](/FE1/Listas/lista_1) - lista01
-- [Lista 02](/FE1/Listas/lista_2) - lista02
-- [Lista 03](/FE1/Listas/lista_3) - lista03
+- [Lista 01](/FE1/Listas/lista_1) - Lista01
+- [Lista 02](/FE1/Listas/lista_2) - Lista02
+- [Lista 03](/FE1/Listas/lista_3) - Lista03
 
 ### Projetos
-- [Projeto 01] (/FE1/Projetos/atividade_continua) - Atividade Contínua
-- [Projeto 02] (/FE1/Projetos/retroplay_store) - Loja de Jogos *RetroPlay*
+- [Projeto 01](/FE1/Projetos/atividade_continua) - Atividade Contínua
+- [Projeto 02](/FE1/Projetos/retroplay_store) - Loja de Jogos *RetroPlay*
 
 
 ## FE II
@@ -33,4 +33,4 @@
 
 
 ### Projetos
-- [Projeto 01] (/FE2/Projetos/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
+- [Projeto 01](/FE2/Projetos/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
