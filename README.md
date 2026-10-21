@@ -7,9 +7,9 @@
 
 ## FE I
 ### Listas
-- [Lista 01](/FE1/Listas/lista_1) - Lista01
-- [Lista 02](/FE1/Listas/lista_2) - Lista02
-- [Lista 03](/FE1/Listas/lista_3) - Lista03
+- [Lista 01](/FE1/Listas/lista_1.js) - Lista01
+- [Lista 02](/FE1/Listas/lista_2.js) - Lista02
+- [Lista 03](/FE1/Listas/lista_3.js) - Lista03
 
 ### Projetos
 - [Projeto 01](/FE1/Projetos/atividade_continua) - Atividade Contínua
@@ -33,4 +33,4 @@
 
 
 ### Projetos
-- [Projeto 01](/FE2/Projetos/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
+- [Projeto 01](/FE2/Projeto/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
