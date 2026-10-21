@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - RetroPlay Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/relatorios.js"></script>
+</head>
+<body>
+
+
+<main>
+
+    <section class="pagina-hero">
+        <h1>Painel Administrativo</h1>
+        <p>Gerencie clientes e visualize compras</p>
+    </section>
+
+    <section style="padding: 30px 0;">
+        <div class="container">
+
+            
+            <div class="cabecalho-relatorio">
+                <h1>RetroPlay Store</h1>
+                <p>Painel de Relatórios - <span id="rel-data"></span></p>
+            </div>
+
+            
+            <div class="grade-stats" id="grade-stats"></div>
+
+            
+            <div class="abas">
+                <button class="aba ativa" id="tab-clientes" onclick="mostrarAba('clientes')">Clientes</button>
+                <button class="aba" id="tab-compras" onclick="mostrarAba('compras')">Compras</button>
+            </div>
+
+            
+            <div id="painel-clientes">
+                <div class="barra-busca">
+                    <input type="text" id="busca-clientes" placeholder="Buscar por nome, ID, e-mail ou CPF...">
+                    <button class="btn btn-azul" onclick="filtrarClientes()">Buscar</button>
+                    <button class="btn" onclick="limparBuscaClientes()">Limpar</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="tabela" id="tabela-clientes">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Cadastro</th>
+                                <th>Compras</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-clientes"></tbody>
+                    </table>
+                </div>
+                <p id="clientes-vazio" class="oculto" style="text-align:center; padding:20px; color:#888;">
+                    Nenhum cliente encontrado.
+                </p>
+            </div>
+
+            
+            <div id="painel-compras" class="oculto">
+                <div class="barra-busca">
+                    <input type="text" id="busca-compras" placeholder="Buscar por ID, cliente, data, valor ou produto...">
+                    <button class="btn btn-azul" onclick="filtrarCompras()">Buscar</button>
+                    <button class="btn" onclick="limparBuscaCompras()">Limpar</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="tabela" id="tabela-compras">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Produtos</th>
+                                <th>Total</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-compras"></tbody>
+                    </table>
+                </div>
+                <p id="compras-vazio" class="oculto" style="text-align:center; padding:20px; color:#888;">
+                    Nenhuma compra registrada.
+                </p>
+            </div>
+
+            
+            <div class="rodape-relatorio">
+                <p>RetroPlay Store - Sistema de Relatórios</p>
+                <p id="rel-rodape-data"></p>
+                <p>Florianópolis, SC - Brasil</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="../estilo/personagens.css">
+  <link rel="stylesheet" href="../estilo/responsividade.css">
+  <link rel="stylesheet" href="../estilo/navegacao.css">
+</head>
+<body>
+  <nav>
+        <a href="./index.html">Inicio</a>
+        <a href="./formulario.html">Formulario</a>
+        <a href="./icones.html">Icones</a>
+        <a href="./memoria.html" class="ativo">Jogo da Memória</a>
+  </nav>
+
+  <div id="jogo">
+
+    <header class="cabecalho">
+      <div class="titulo-principal">
+        <h1>Jogo da Memória</h1>
+      </div>
+      <p class="subtitulo">Encontre todos os pares de personagens</p>
+    </header>
+
+    <section class="controles">
+      <div class="grupo-controle">
+        <label for="dificuldade" class="rotulo">Dificuldade</label>
+          <select id="dificuldade">
+            <option value="facil">Fácil</option>
+            <option value="medio" selected>Médio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+      </div>
+      <button id="botao-iniciar" class="botao-principal">
+        Nova Partida ▶
+      </button>
+    </section>
+
+    <section class="placar">
+      <div class="caixa-placar">
+        <span class="valor-placar" id="tentativas">0</span>
+        <span class="nome-placar">Tentativas</span>
+      </div>
+      <div class="caixa-placar">
+        <span class="valor-placar" id="pares">0 / 0</span>
+        <span class="nome-placar">Pares</span>
+      </div>
+      <div class="caixa-placar">
+        <span class="valor-placar" id="partidas">0</span>
+        <span class="nome-placar">Partidas</span>
+      </div>
+      <div class="caixa-placar">
+        <span class="valor-placar" id="recorde">—</span>
+        <span class="nome-placar">Recorde</span>
+      </div>
+    </section>
+
+    <main id="tabuleiro"></main>
+
+  </div>
+
+  <div id="fundo-escuro">
+    <div class="janela">
+      <h2 id="janela-titulo"></h2>
+      <p id="janela-mensagem"></p>
+      <p id="janela-recorde"></p>
+      <button id="botao-jogar-de-novo" class="botao-principal botao-largo">
+        Jogar Novamente
+      </button>
+    </div>
+  </div>
+
+  <script src="personagens.js"></script>
+
+</body>
+</html>

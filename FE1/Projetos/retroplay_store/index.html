@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroPlay Store - Jogos Clássicos</title>
+    <meta name="description" content="A maior loja de jogos retro do Brasil.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<main>
+
+    
+    <section class="hero">
+        <h1>RetroPlay Store</h1>
+        <p>Reviva os clássicos que marcaram gerações.</p>
+        <div class="hero-botoes">
+            <a href="loja.html" class="btn btn-vermelho">Ver Catálogo</a>
+            <a href="cadastro.html" class="btn">Criar Conta</a>
+        </div>
+    </section>
+
+    
+    <section style="padding: 30px 0; background-color: #f4f4f4;">
+        <div class="container">
+            <h2 class="secao-titulo">Produtos em Destaque</h2>
+            <div class="grade-produtos" id="home-produtos"></div>
+            <div class="texto-centro mt-20">
+                <a href="loja.html" class="btn btn-vermelho">Ver todos os jogos</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="secao-sobre">
+        <div class="container">
+            <h2 class="secao-titulo">Sobre a RetroPlay</h2>
+            <div class="sobre-grid">
+                <div>
+                    <img src="img/consoles.png" alt="Consoles Antigos" >
+                </div>
+                <div class="sobre-texto">
+                    <h2>A loja dos verdadeiros jogadores</h2>
+                    <p>
+                        Fundada em 2026 por colecionadores apaixonados, a RetroPlay Store nasceu para preservar
+                        e celebrar a era de ouro dos videogames. Nosso catálogo vai de clássicos de fliperama
+                        atá os grandes hits dos consoles dos anos 80 e 90.
+                    </p>
+                    <p>
+                        Cada título é cuidadosamente selecionado para garantir a autenticidade e a qualidade
+                        que os fãs merecem. Seja você um nostalgico ou um novo jogador descobrindo os clássicos,
+                        aqui é o seu lugar.
+                    </p>
+                    <a href="loja.html" class="btn btn-vermelho mt-20" style="display:inline-block">Explorar catalogo</a>
+                </div>
+            </div>
+
+            <hr class="separador">
+
+            
+            <div style="text-align:center; margin-bottom: 20px;">
+                <img src="img/jogos.jpg" alt="Colecao de jogos retro" class="banner-sobre">
+            </div>
+
+            <div class="cards-info">
+                <div class="card-info">
+                    <h3>Arcade Original</h3>
+                    <p>Títulos 100% originais de fliperamas lendários dos anos 80.</p>
+                </div>
+                <div class="card-info">
+                    <h3>Entrega Rápida</h3>
+                    <p>Receba seus jogos em até 5 dias úteis em qualquer lugar do Brasil.</p>
+                </div>
+                <div class="card-info">
+                    <h3>Comunidade</h3>
+                    <p>Junte-se a milhares de colecionadores e retrogamers apaixonados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="secao-contato">
+        <div class="container">
+            <h2 class="secao-titulo" style="color:white; border-color:#e94560;">Contato</h2>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <h3>Fale conosco</h3>
+                    <p>Endereço: Florianópolis, SC - Brasil</p>
+                    <p>E-mail: contato@retroplay.com.br</p>
+                    <p>Telefone: (48) 99999-8888</p>
+                    <p>Horário: Segunda à Sexta, 9h às 18h</p>
+                    <br>
+                    <p>Dúvidas sobre pedidos, trocas ou parcerias? Envie uma mensagem!</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom:15px; font-size:16px;">Enviar Mensagem</h3>
+                    <form id="form-contato" novalidate>
+                        <div class="form-grupo">
+                            <label for="c-nome">Nome</label>
+                            <input type="text" id="c-nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="c-email">E-mail</label>
+                            <input type="email" id="c-email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="c-msg">Mensagem</label>
+                            <textarea id="c-msg" placeholder="Como podemos ajudar?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-azul btn-bloco">Enviar mensagem</button>
+                        <div id="feedback-contato" style="margin-top:10px;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>

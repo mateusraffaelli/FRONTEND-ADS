@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RetroPlay Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main>
+
+    <section class="pagina-hero">
+        <h1>Acesso do Cliente</h1>
+        <p>Entre na sua conta para acessar a loja</p>
+    </section>
+
+    <div class="container">
+
+        <div id="painel-login">
+            <div class="card-box">
+                <h2>Login</h2>
+                <div id="alerta-login"></div>
+                <form id="form-login" novalidate>
+                    <div class="form-grupo">
+                        <label for="l-email">E-mail</label>
+                        <input type="email" id="l-email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="l-senha">Senha</label>
+                        <input type="password" id="l-senha" placeholder="Sua senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-azul btn-bloco">Entrar</button>
+                </form>
+                <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
+                    Não tem conta? <a href="#" id="btn-ir-cadastro">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="painel-cadastro" class="oculto">
+            <div class="card-box">
+                <h2>Novo Cliente</h2>
+                <div id="alerta-cadastro"></div>
+                <form id="form-cadastro" novalidate>
+                    <div class="form-grupo">
+                        <label for="cad-nome">Nome Completo *</label>
+                        <input type="text" id="cad-nome" placeholder="Seu nome completo" maxlength="100" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cad-email">E-mail *</label>
+                        <input type="email" id="cad-email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cad-cpf">CPF *</label>
+                        <input type="text" id="cad-cpf" placeholder="000.000.000-00" maxlength="14" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cad-tel">Telefone</label>
+                        <input type="text" id="cad-tel" placeholder="(48) 99999-0000" maxlength="20">
+                    </div>
+
+                    <hr class="separador">
+                    <h3 style="margin-bottom:10px; font-size:16px; color:#555;">Endereço</h3>
+
+                    <div class="form-grupo">
+                        <label for="cad-cep">CEP *</label>
+                        <input type="text" id="cad-cep" placeholder="00000-000" maxlength="9" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cad-rua">Rua *</label>
+                        <input type="text" id="cad-rua" placeholder="Nome da rua" maxlength="200" required>
+                    </div>
+                    <div class="form-linha">
+                        <div class="form-grupo">
+                            <label for="cad-numero">Número *</label>
+                            <input type="text" id="cad-numero" placeholder="Nº" maxlength="10" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="cad-complemento">Complemento</label>
+                            <input type="text" id="cad-complemento" placeholder="Apto, bloco..." maxlength="100">
+                        </div>
+                    </div>
+
+                    <hr class="separador">
+
+                    <div class="form-grupo">
+                        <label for="cad-senha">Senha *</label>
+                        <input type="password" id="cad-senha" placeholder="Minimo 6 caracteres" minlength="6" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cad-senha2">Confirmar Senha *</label>
+                        <input type="password" id="cad-senha2" placeholder="Repita a senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-vermelho btn-bloco">Cadastrar</button>
+                </form>
+                <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
+                    Já tem conta? <a href="#" id="btn-ir-login">Faça login</a>
+                </p>
+            </div>
+        </div>
+
+        
+        <div id="painel-logado" class="oculto">
+            <div class="card-box" style="max-width:600px;">
+                <h2 id="titulo-logado">Perfil</h2>
+                <div id="alerta-logado"></div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+                    <p style="font-size:14px; color:#666;">
+                        Seu ID: <strong id="logado-id" style="color:#333;"></strong>
+                    </p>
+                    <button class="btn btn-vermelho" onclick="logout()">Sair da conta</button>
+                </div>
+
+                <form id="form-edicao" novalidate>
+                    <div class="form-grupo">
+                        <label for="e-nome">Nome Completo</label>
+                        <input type="text" id="e-nome" required maxlength="100">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="e-email">E-mail</label>
+                        <input type="email" id="e-email" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="e-cpf">CPF</label>
+                        <input type="text" id="e-cpf" required maxlength="14">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="e-tel">Telefone</label>
+                        <input type="text" id="e-tel" maxlength="20">
+                    </div>
+
+                    <hr class="separador">
+                    <h3 style="margin-bottom:10px; font-size:16px; color:#555;">Endereço</h3>
+
+                    <div class="form-grupo">
+                        <label for="e-cep">CEP *</label>
+                        <input type="text" id="e-cep" placeholder="00000-000" maxlength="9" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="e-rua">Rua *</label>
+                        <input type="text" id="e-rua" maxlength="200" required>
+                    </div>
+                    <div class="form-linha">
+                        <div class="form-grupo">
+                            <label for="e-numero">Número *</label>
+                            <input type="text" id="e-numero" maxlength="10" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="e-complemento">Complemento</label>
+                            <input type="text" id="e-complemento" placeholder="Apto, bloco..." maxlength="100">
+                        </div>
+                    </div>
+
+                    <hr class="separador">
+
+                    <div class="form-grupo">
+                        <label for="e-senha">Nova Senha <span style="font-size:12px; font-weight:normal; color:#888;">(deixe em branco para nao alterar)</span></label>
+                        <input type="password" id="e-senha" placeholder="Nova senha" minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-verde btn-bloco">Salvar Alterações</button>
+                </form>
+
+                <hr class="separador">
+                <div class="texto-centro">
+                    <a href="loja.html" class="btn btn-vermelho">Ir para a Loja</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/cadastro.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

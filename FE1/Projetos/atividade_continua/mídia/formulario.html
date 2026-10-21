@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilo/style.css">
+    <link rel="stylesheet" href="../estilo/media-query.css">
+    <link rel="stylesheet" href="../estilo/navegacao.css">
+</head>
+<body>
+    <nav>
+        <a href="./index.html">Inicio</a>
+        <a href="./formulario.html" class="ativo">Formulario</a>
+        <a href="./icones.html">Icones</a>
+        <a href="./memoria.html">Jogo da Memória</a>
+    </nav>
+    <h1>Formulário de Experiências</h1>
+    <form>
+        <p>Seu nome:</p>
+        <label for="nome">
+            <input type="text">
+        </label> <br>
+
+        <p>Filmes assistidos:</p>
+        <label for="filmes">
+            <input type="text">
+        </label><br>
+
+        <p>Avaliação do filme (1-10)</p>
+        <label for="avaliacao">
+            <input type="number" name="avaliacao" min="1" max="10" required><br>
+        </label>
+
+        <p>Livros lidos:</p>
+        <label for="livros">
+            <input type="text">
+        </label><br>
+
+        <p>Músicas marcantes</p>
+        <label for="musicas">
+            <input type="text"> <br>
+            <p>Quando você ouviu pela primeira vez?</p>
+            <input type="date">
+        </label><br>
+
+        <p>Qual sua banda preferida? </p>
+            <label for="banda">
+                <select>
+                <option value="beatles">Beatles</option>
+                <option value="queen">Queen</option>
+                <option value="pink_floyd"> Pink Floyd</option>
+                <option value="ac/dc"> AC/DC</option>
+                <option value="nirvana">Nirvana</option>
+            </select><br> <br>
+            </label>
+        
+            <p>Qual é o seu tipo de música preferido?</p>
+            <label>
+                <input type="checkbox" name="musica" value="Rock" checked>
+                Rock
+            </label><br>
+            <label>
+                <input type="checkbox" name="musica" value="Pop">
+                Pop
+            </label><br>
+            <label>
+                <input type="checkbox" name="musica" value="MPB">
+                MPB
+            </label><br>
+            <label>
+                <input type="checkbox" name="musica" value="Samba" checked>
+                Samba
+            </label><br>
+            <label>
+                <input type="checkbox" name="musica" value="funk" checked>
+                Funk
+            </label>
+                                
+            
+        <button type="submit">Enviar</button><br><br>
+            
+        <a href="index.html">Voltar para a página principal</a>
+
+    </form>
+</body>
+</html>

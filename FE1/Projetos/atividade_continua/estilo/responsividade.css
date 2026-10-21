@@ -1,0 +1,181 @@
+
+/* tela grande */
+@media (min-width: 1024px) {
+
+  #jogo {
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .cabecalho h1 {
+    font-size: 2.75rem;
+  }
+
+  .placar {
+    gap: 1rem;
+  }
+
+  .caixa-placar {
+    padding: 1rem 0.75rem;
+  }
+
+  .valor-placar {
+    font-size: 1.75rem;
+  }
+
+  #tabuleiro {
+    gap: 0.75rem;
+  }
+}
+
+
+/* tablet */
+@media (max-width: 768px) {
+
+  #jogo {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .cabecalho {
+    margin-bottom: 1.5rem;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+  }
+
+  .controles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    border-radius: var(--raio-m);
+  }
+
+  .botao-principal {
+    justify-content: center;
+    padding: 0.65rem 1rem;
+  }
+
+  .placar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .caixa-placar {
+    flex-direction: row;
+    gap: 0.5rem;
+    text-align: left;
+    padding: 0.75rem 1rem;
+  }
+
+  .valor-placar {
+    font-size: 1.2rem;
+  }
+
+  .nome-placar {
+    font-size: 0.65rem;
+  }
+
+  #tabuleiro {
+    gap: 0.5rem;
+  }
+
+  .janela {
+    padding: 2rem 1.5rem;
+  }
+
+  .janela h2 { font-size: 1.5rem; }
+}
+
+
+/* celular */
+@media (max-width: 540px) {
+
+  #jogo {
+    padding: 1.25rem 0.85rem 2rem;
+  }
+
+  .cabecalho h1 { font-size: 1.5rem; }
+  .subtitulo { font-size: 0.8rem; }
+
+  .controles {
+    padding: 0.75rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  select {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .botao-principal {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .placar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .caixa-placar {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .valor-placar { font-size: 1.1rem; }
+  .nome-placar { font-size: 0.62rem; }
+
+  #tabuleiro { gap: 0.45rem; }
+
+  .carta-interna,
+  .carta-frente,
+  .carta-verso {
+    border-radius: var(--raio-p);
+  }
+
+  .carta-imagem {
+    border-radius: var(--raio-p);
+  }
+
+  .janela {
+    padding: 1.75rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .janela h2    { font-size: 1.35rem; }
+  .janela p     { font-size: 0.82rem; }
+}
+
+
+/* celular pequeno */
+@media (max-width: 400px) {
+
+  #jogo {
+    padding: 1rem 0.65rem 1.5rem;
+  }
+
+  .cabecalho h1 { font-size: 1.3rem; }
+
+  .placar {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .valor-placar { font-size: 1rem; }
+
+  #tabuleiro { gap: 0.35rem; }
+
+  .janela {
+    padding: 1.5rem 1rem;
+  }
+
+  .janela h2 { font-size: 1.2rem; }
+}

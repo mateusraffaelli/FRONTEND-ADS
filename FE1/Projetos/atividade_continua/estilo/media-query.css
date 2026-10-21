@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 576px){
+body{
+    font-size: 14px;
+}
+
+header {
+    padding: 10px;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+.conteiner-flex {
+    flex-direction: column;
+    justify-content: unset;
+    align-items:flex-start;
+    padding: 20px;
+}
+
+.galeria-de-personagens{
+    margin-top: 20px;
+}
+
+.caixa-sagas {
+    margin: 10px 0;
+}
+
+#disciplinas table {
+    font-size: 0.7rem;
+}
+
+audio {
+    width: 100%;
+}
+
+.links {
+    padding: 10px;
+}
+    
+}
+
+@media screen and (min-width:577px) and (max-width: 768px){
+body{
+    font-size: 15px;
+}
+
+
+h1 {
+    font-size: 2.2em;
+}
+
+.conteiner-flex {
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.galeria-de-personagens{
+    margin-top: 20px;
+}
+
+audio {
+    width: 100%;
+}
+
+.caixa-sagas {
+    margin: 15px 5px;
+}
+
+#disciplinas table {
+    font-size: 0.75rem;
+}
+
+}
+
+@media screen and (min-width: 769px)and (max-width: 1024px){
+body{
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.conteiner-flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+audio {
+    width: 90%;
+}
+
+}
+
+@media screen and (min-width: 1025px){
+body{
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.conteiner-flex {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+audio {
+    width: 70%;
+}
+
+
+}
+
+@media screen and (orientation: portrait) {
+.conteiner-flex {
+    flex-direction: column;
+}
+
+audio {
+    width: 100%;
+}
+
+.caixa-sagas {
+    height: auto;
+}
+
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+h1 {
+    font-size: 1.5em;
+}
+
+header {
+    padding: 10px;
+}
+
+.caixa-sagas {
+    height: 200px;
+}
+
+.conteiner-flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+audio {
+    width: 100%;
+}
+
+}    

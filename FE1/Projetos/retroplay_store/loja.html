@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - RetroPlay Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+<main>
+
+    <section class="pagina-hero">
+        <h1>Catálogo de Jogos</h1>
+        <p>Todos os clássicos disponiveis para você reviver</p>
+    </section>
+
+    <section style="padding: 30px 0;">
+        <div class="container">
+
+            
+            <div class="barra-filtros">
+                <input type="text" id="filtro-busca" placeholder="Buscar por nome ou plataforma...">
+                <select id="filtro-plataforma">
+                    <option value="">Todas as plataformas</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="SNES">SNES</option>
+                    <option value="Mega Drive">Mega Drive</option>
+                    <option value="N64">N64</option>
+                    <option value="NES">NES</option>
+                    <option value="Game Boy">Game Boy</option>
+                    <option value="PS1">PS1</option>
+                </select>
+                <select id="filtro-ordem">
+                    <option value="">Ordenar por...</option>
+                    <option value="az">Nome A-Z</option>
+                    <option value="za">Nome Z-A</option>
+                    <option value="menor">Menor preco</option>
+                    <option value="maior">Maior preco</option>
+                </select>
+            </div>
+
+            
+            <div class="grade-produtos" id="loja-grade"></div>
+            <p id="loja-vazio" class="oculto" style="text-align:center; padding:30px; color:#888;">
+                Nenhum produto encontrado.
+            </p>
+
+            
+            <div id="secao-checkout" style="margin-top: 40px;">
+                <hr class="separador">
+                <h2 class="secao-titulo" id="checkout">Finalizar Compra</h2>
+                <div id="checkout-conteudo"></div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/loja.js"></script>
+
+</body>
+</html>

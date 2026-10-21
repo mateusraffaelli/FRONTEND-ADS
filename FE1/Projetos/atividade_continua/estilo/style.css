@@ -1,0 +1,158 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #1a1a1a;
+    width: 100%;
+    height: 100%;
+    
+}
+
+header{
+    background-color: #363636;
+}
+
+h1{
+    color: rgb(245, 245, 245);
+    margin-bottom: 30px;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+h2{
+    color: #c8a45a;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+
+}
+
+h3 > a{
+    color:beige;
+}
+
+p{
+    color: rgb(141, 141, 141);
+    font-size: 1em;
+    font-family:'Courier New', Courier, monospace;
+}
+
+a{
+    color: #c8a45a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 164, 90, 0.3);
+}
+
+section{
+    padding: 10px;
+}
+
+#musicas > article > ul{
+    margin: 20px;
+}
+
+#musicas > article > ul > li {
+    margin-bottom: 40px;
+}
+
+.links{
+    margin-top: 10px;
+    background-color: #363636;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+li{
+    color: rgb(141, 141, 141);
+}
+
+.caixa-sagas{
+    background-color: rgb(26, 26, 26);
+    border-left: 3px solid #c8a45a;
+    padding: 2em;
+    margin: 30px;
+    height: 300px;
+    overflow: auto;
+}
+
+li > img {
+    width: 3em;
+}
+
+#disciplinas table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+#disciplinas th{
+    color: #c8a45a;
+    background-color: #1a1a1a;
+    padding: 10px 14px;
+    border: 1px solid #2a2a2a;
+    letter-spacing: 1px;
+}
+
+#disciplinas td{
+    color: #363636;
+    padding: 8px 14px;
+    border: 1px solid #1e1e1e;
+    text-align: center;
+}
+
+.destaque{
+    background-color:#c8a35a8f;
+    font-weight: bold;
+}
+
+.conteiner-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em; 
+}
+
+.galeria-de-personagens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagens-galeria{
+    display: flex;
+    justify-content: center;
+}
+
+
+.imagens-galeria > div{
+    margin: 30px;
+}
+
+#arthur > img{
+   width: 4em;
+}
+
+#kratos > img {
+     width: 5.5em;
+}
+
+#geralt > img {
+    width: 8em;
+}
+
+footer {
+  height: 60px;
+  background-color: rgb(39, 38, 38);
+}
+
+
+
+
+
