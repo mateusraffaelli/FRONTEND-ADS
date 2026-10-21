@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 7 | Catalogo Modular</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./dist/js/script.js" type="module" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#catalogo-title" aria-label="Catalogo modular">
+      <span class="brand__mark">ES</span>
+      <span>Catalogo Modular</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="#catalogo-title">Catalogo</a>
+      <a href="#busca-title">Busca</a>
+      <a href="#modulos-title">Modulos</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow">ES Modules com TypeScript</p>
+      <h1>Monte uma vitrine usando dados importados de outros arquivos.</h1>
+      <p>
+        A pagina ja esta pronta. Importe o catalogo, filtre os produtos disponiveis,
+        formate os precos e renderize tudo usando o arquivo <code>src/script.ts</code>.
+      </p>
+    </div>
+
+    <aside class="summary-card" aria-label="Resumo do catalogo">
+      <span>Produtos disponiveis</span>
+      <strong id="total-disponiveis" data-testid="total-disponiveis">0</strong>
+      <small>Atualize este numero com a funcao <code>listarDisponiveis</code>.</small>
+    </aside>
+  </header>
+
+  <main class="layout">
+    <section class="panel panel--wide" aria-labelledby="catalogo-title">
+      <div class="panel__header">
+        <span class="step">1</span>
+        <div>
+          <h2 id="catalogo-title">Produtos disponiveis</h2>
+          <p>Renderize aqui os produtos retornados pelo modulo <code>catalogo.ts</code>.</p>
+        </div>
+      </div>
+
+      <ul id="lista-produtos" class="product-grid" data-testid="lista-produtos">
+        <li class="empty-state">Nenhum produto renderizado ainda.</li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="busca-title">
+      <div class="panel__header">
+        <span class="step">2</span>
+        <div>
+          <h2 id="busca-title">Buscar por ID</h2>
+          <p>Use a funcao <code>buscarPorId</code> para localizar um produto do catalogo.</p>
+        </div>
+      </div>
+
+      <form id="form-busca" class="search-form" data-testid="form-busca">
+        <label for="produto-id">ID do produto</label>
+        <div class="inline-field">
+          <input id="produto-id" name="id" type="number" min="1" value="1" required />
+          <button id="botao-buscar" type="submit">Buscar</button>
+        </div>
+      </form>
+
+      <output id="resultado-busca" class="result" role="status" aria-live="polite" data-testid="resultado-busca">
+        Nenhuma busca realizada.
+      </output>
+    </section>
+
+    <section class="panel" aria-labelledby="modulos-title">
+      <div class="panel__header">
+        <span class="step">3</span>
+        <div>
+          <h2 id="modulos-title">Modulos esperados</h2>
+          <p>Separe responsabilidades e importe apenas o que for necessario.</p>
+        </div>
+      </div>
+
+      <ul class="module-list">
+        <li><code>produto.ts</code> define e exporta o tipo <code>Produto</code>.</li>
+        <li><code>catalogo.ts</code> exporta a lista e as funcoes do catalogo.</li>
+        <li><code>formatador.ts</code> exporta a funcao de formatar preco.</li>
+        <li><code>script.ts</code> conecta os modulos a esta interface.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Laboratorio 7: Modularizacao ES e organizacao de dependencias</strong>
+    <span>Programacao Frontend II - Analise e Desenvolvimento de Sistemas</span>
+  </footer>
+</body>
+
+</html>

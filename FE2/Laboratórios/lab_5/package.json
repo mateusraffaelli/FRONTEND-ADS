@@ -1,0 +1,21 @@
+{
+    "name": "lab_5",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tsc": "tsc -w",
+        "serve": "live-server ./ --port=8080",
+        "start": "npm run tsc & npm run serve"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "typescript": "^7.0.2"
+    },
+    "dependencies": {
+        "live-server": "^1.2.2"
+    }
+}

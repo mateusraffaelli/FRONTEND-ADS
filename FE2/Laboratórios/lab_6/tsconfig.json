@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/js",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2025",
+    "noEmitOnError": true,
+    "module": "es2022"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [ "./src/**/*.ts" ]
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 6 | Carrinho Funcional</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./dist/js/script.js" type="module" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Carrinho funcional">
+      <span class="brand__mark">CF</span>
+      <span>Carrinho Funcional</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="#produto-title">Produto</a>
+      <a href="#acoes-title">Acoes</a>
+      <a href="#lista-title">Carrinho</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Programacao funcional com TypeScript</p>
+      <h1>Gerencie um carrinho sem modificar a lista original.</h1>
+      <p>
+        Adicione produtos, atualize quantidades, altere disponibilidade, busque itens e gere resumos usando as funcoes do laboratorio.
+      </p>
+      <a class="hero__action" href="#produto-title">Cadastrar produto</a>
+    </div>
+
+    <aside class="hero-card" aria-label="Resumo do carrinho">
+      <strong>Estado atual</strong>
+      <span><b id="total-produtos">0</b> produtos no carrinho</span>
+      <span><b id="total-itens">0</b> itens somados</span>
+      <span><b id="total-estoque">0</b> produtos em estoque</span>
+    </aside>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="produto-title">
+      <div class="panel__header">
+        <span class="step">1</span>
+        <div>
+          <h2 id="produto-title">Adicionar ou atualizar</h2>
+          <p>Use o mesmo ID para substituir os dados de um produto existente.</p>
+        </div>
+      </div>
+
+      <form id="form-produto" class="form" data-testid="form-produto">
+        <div class="grid-2">
+          <div>
+            <label for="produto-id">ID</label>
+            <input id="produto-id" name="id" type="number" min="1" value="1" required />
+          </div>
+
+          <div>
+            <label for="produto-categoria">Categoria</label>
+            <select id="produto-categoria" name="categoria" required>
+              <option value="eletronico">Eletronico</option>
+              <option value="livro">Livro</option>
+              <option value="roupa">Roupa</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="produto-nome">Nome</label>
+        <input id="produto-nome" name="nome" type="text" placeholder="Ex.: Teclado mecanico" required />
+
+        <div class="grid-2">
+          <div>
+            <label for="produto-preco">Preco unitario</label>
+            <input id="produto-preco" name="preco" type="number" min="0.01" step="0.01" value="100.00" required />
+          </div>
+
+          <div>
+            <label for="produto-quantidade">Quantidade</label>
+            <input id="produto-quantidade" name="quantidade" type="number" min="0" value="1" required />
+          </div>
+        </div>
+
+        <label class="check-field">
+          <input id="produto-estoque" name="emEstoque" type="checkbox" checked />
+          Produto em estoque
+        </label>
+
+        <button type="submit">Salvar produto</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="acoes-title">
+      <div class="panel__header">
+        <span class="step">2</span>
+        <div>
+          <h2 id="acoes-title">Acoes do carrinho</h2>
+          <p>Manipule a lista usando as funcoes puras do laboratorio.</p>
+        </div>
+      </div>
+
+      <form id="form-quantidade" class="form compact-form" data-testid="form-quantidade">
+        <div>
+          <label for="quantidade-id">ID do produto</label>
+          <input id="quantidade-id" name="id" type="number" min="1" value="1" required />
+        </div>
+        <div>
+          <label for="nova-quantidade">Nova quantidade</label>
+          <input id="nova-quantidade" name="quantidade" type="text" value="2" required />
+        </div>
+        <button type="submit">Atualizar quantidade</button>
+      </form>
+
+      <div class="button-grid" role="group" aria-label="Acoes por ID">
+        <button id="btn-inverter" type="button" class="secondary">Inverter estoque</button>
+        <button id="btn-remover" type="button" class="danger">Remover produto</button>
+      </div>
+
+      <form id="form-busca" class="form" data-testid="form-busca">
+        <label for="busca-nome">Buscar por nome</label>
+        <div class="inline-field">
+          <input id="busca-nome" name="nome" type="text" placeholder="Ex.: livro de js" required />
+          <button type="submit" class="secondary">Buscar</button>
+        </div>
+      </form>
+
+      <button id="btn-limpar" type="button" class="secondary full-button">Limpar indisponiveis</button>
+
+      <output id="saida-operacao" class="output" role="status" aria-live="polite" data-testid="saida-operacao">
+        Nenhuma operacao realizada.
+      </output>
+    </section>
+
+    <section class="panel panel--wide" aria-labelledby="lista-title">
+      <div class="panel__header">
+        <span class="step">3</span>
+        <div>
+          <h2 id="lista-title">Carrinho</h2>
+          <p>Lista renderizada a partir de <code>listarResumosProdutos</code>.</p>
+        </div>
+      </div>
+
+      <div class="dashboard">
+        <article class="status-card">
+          <h3>Produtos</h3>
+          <ul id="lista-produtos" class="list" data-testid="lista-produtos"></ul>
+        </article>
+
+        <article class="status-card">
+          <h3>Resultado da busca</h3>
+          <div id="resultado-busca" class="search-result" data-testid="resultado-busca">Nenhuma busca realizada.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Laboratorio 6: Programacao funcional com TypeScript</strong>
+      <p>Programacao Frontend II - Analise e Desenvolvimento de Sistemas</p>
+    </div>
+    <div>
+      <p>Funcoes: <code>adicionarProduto</code>, <code>removerProduto</code>, <code>atualizarQuantidadeProduto</code></p>
+      <p>Tambem usa busca, resumo, disponibilidade e limpeza de indisponiveis.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "cafeteria",
+  "version": "0.0.1",
+  "description": "CRUD da Cafeteria",
+  "main": "main.js",
+  "scripts": {
+    "tsc": "tsc -w",
+    "serve": "zappp ./ -p 8080 --no-browser",
+    "start": "npm run tsc & npm run serve"
+  },
+  "keywords": [
+    "lab",
+    "cafeteria",
+    "spa"
+  ],
+  "author": "Mateus Raffaelli",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "zappp": "^1.0.0"
+  }
+}

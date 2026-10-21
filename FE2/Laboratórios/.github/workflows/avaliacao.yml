@@ -1,0 +1,54 @@
+name: Avaliacao
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      laboratorio:
+        description: "Laboratorio dos laboratórios de FE2"
+        required: true
+        default: "1"
+
+jobs:
+  avaliar:
+    runs-on: ubuntu-latest
+
+    env:
+      LABORATORIO: ${{ github.event.inputs.laboratorio || vars.LABORATORIO_AVALIACAO || 'todos' }}
+      ALUNO_MATRICULA: ${{ vars.ALUNO_MATRICULA || vars.MATRICULA }}
+      GOOGLE_APPS_SCRIPT_CONFIGURADO: ${{ secrets.GOOGLE_APPS_SCRIPT_URL != '' && secrets.GOOGLE_APPS_SCRIPT_TOKEN != '' }}
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Avaliar laboratorio
+        run: npm run avaliar
+
+      - name: Enviar resultado para planilha
+        if: always() && env.GOOGLE_APPS_SCRIPT_CONFIGURADO == 'true'
+        run: npm run enviar-planilha
+        env:
+          GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_APPS_SCRIPT_URL }}
+          GOOGLE_APPS_SCRIPT_TOKEN: ${{ secrets.GOOGLE_APPS_SCRIPT_TOKEN }}
+
+      - name: Publicar resultado da avaliacao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avaliacao-lab-${{ env.LABORATORIO }}
+          path: avaliacao.json

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RetroPlay Locadora</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./dist/js/script.js" type="module" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="RetroPlay Locadora">
+      <span class="brand__mark">RP</span>
+      <span>RetroPlay</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="#clientes-title">Clientes</a>
+      <a href="#midias-title">Catalogo</a>
+      <a href="#operacoes-title">Locacao</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Filmes, jogos e classicos para levar para casa</p>
+      <h1>Sua locadora digital com clima de fim de semana.</h1>
+      <p>
+        Cadastre clientes, organize o catalogo e acompanhe alugueis em uma experiencia simples para o balcao da locadora.
+      </p>
+      <a class="hero__action" href="#operacoes-title">Iniciar locacao</a>
+    </div>
+
+    <aside class="hero-card" aria-label="Destaques da locadora">
+      <strong>Hoje na RetroPlay</strong>
+      <span>Filmes: prazo de 5 dias</span>
+      <span>Jogos: prazo de 7 dias</span>
+      <span>Multas calculadas na devolucao</span>
+    </aside>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="clientes-title">
+      <div class="panel__header">
+        <span class="step">1</span>
+        <div>
+          <h2 id="clientes-title">Clientes</h2>
+          <p>Inclua novos clientes antes de registrar uma locacao.</p>
+        </div>
+      </div>
+
+      <form id="form-cliente" class="form" data-testid="form-cliente">
+        <label for="cliente-nome">Nome do cliente</label>
+        <div class="inline-field">
+          <input id="cliente-nome" name="nome" type="text" placeholder="Ex.: Ana Pereira" required />
+          <button type="submit">Cadastrar</button>
+        </div>
+      </form>
+
+      <div class="result-box">
+        <h3>Clientes cadastrados</h3>
+        <ul id="lista-clientes" class="list" data-testid="lista-clientes"></ul>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="midias-title">
+      <div class="panel__header">
+        <span class="step">2</span>
+        <div>
+          <h2 id="midias-title">Midias</h2>
+          <p>Monte o catalogo com filmes e jogos disponiveis.</p>
+        </div>
+      </div>
+
+      <form id="form-midia" class="form" data-testid="form-midia">
+        <div class="grid-2">
+          <div>
+            <label for="midia-tipo">Tipo</label>
+            <select id="midia-tipo" name="tipo" required>
+              <option value="filme">Filme</option>
+              <option value="jogo">Jogo</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="midia-copias">Copias disponiveis</label>
+            <input id="midia-copias" name="copias" type="number" min="1" value="1" required />
+          </div>
+        </div>
+
+        <label for="midia-titulo">Titulo</label>
+        <input id="midia-titulo" name="titulo" type="text" placeholder="Ex.: Interestelar" required />
+
+        <div id="campos-filme" class="conditional-fields" data-tipo="filme">
+          <label for="filme-elenco">Elenco</label>
+          <textarea id="filme-elenco" name="elenco" rows="3" placeholder="Um artista por linha: nome;sobrenome;nacionalidade"></textarea>
+          <p class="hint">Exemplo: Fernanda;Torres;Brasil</p>
+        </div>
+
+        <div id="campos-jogo" class="conditional-fields" data-tipo="jogo" hidden>
+          <label for="jogo-plataforma">Plataforma</label>
+          <input id="jogo-plataforma" name="plataforma" type="text" placeholder="Ex.: PC, PlayStation, Xbox, Switch" />
+        </div>
+
+        <button type="submit">Cadastrar midia</button>
+      </form>
+
+      <div class="result-box">
+        <h3>Catalogo</h3>
+        <ul id="lista-midias" class="list" data-testid="lista-midias"></ul>
+      </div>
+    </section>
+
+    <section class="panel panel--wide" aria-labelledby="operacoes-title">
+      <div class="panel__header">
+        <span class="step">3</span>
+        <div>
+          <h2 id="operacoes-title">Alugueis e devolucoes</h2>
+          <p>Registre retiradas, devolucoes e consulte detalhes do acervo.</p>
+        </div>
+      </div>
+
+      <form id="form-operacao" class="form operations" data-testid="form-operacao">
+        <div>
+          <label for="operacao-cliente">Cliente</label>
+          <select id="operacao-cliente" name="cliente" required>
+            <option value="">Selecione um cliente</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="operacao-midia">Midia</label>
+          <select id="operacao-midia" name="midia" required>
+            <option value="">Selecione uma midia</option>
+          </select>
+        </div>
+
+        <div class="button-group" role="group" aria-label="Acoes da locadora">
+          <button id="btn-alugar" type="button" data-action="alugar">Alugar</button>
+          <button id="btn-devolver" type="button" data-action="devolver" class="secondary">Devolver</button>
+          <button id="btn-descricao" type="button" data-action="descricao" class="secondary">Ver descricao</button>
+        </div>
+      </form>
+
+      <div class="dashboard">
+        <article class="status-card">
+          <h3>Resultado</h3>
+          <output id="saida-operacao" class="output" role="status" aria-live="polite" data-testid="saida-operacao">
+            Nenhuma operacao realizada.
+          </output>
+        </article>
+
+        <article class="status-card">
+          <h3>Alugueis abertos</h3>
+          <ul id="lista-alugueis" class="list" data-testid="lista-alugueis"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Laboratorio 5: TypeScript no DOM</strong>
+      <p>Programacao Frontend II - Analise e Desenvolvimento de Sistemas</p>
+    </div>
+    <div>
+      <p>Exercicio: orientacao a objetos em TypeScript</p>
+      <p>Classes: <code>Midia</code>, <code>Filme</code>, <code>Jogo</code> e <code>Cliente</code></p>
+    </div>
+  </footer>
+</body>
+
+</html>

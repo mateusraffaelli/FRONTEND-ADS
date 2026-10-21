@@ -1,0 +1,19 @@
+{
+  "name": "prova-2026-2",
+  "version": "1.0.0",
+  "description": "Prova de Programação Frontend II (2026/2)",
+  "author": "Adriano Lima",
+  "license": "ISC",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "vitest run --reporter verbose",
+    "test:1": "vitest run ./testes/questao1.test.js --reporter verbose",
+    "test:2": "vitest run ./testes/questao2.test.ts --reporter verbose"
+  },
+  "type": "module",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

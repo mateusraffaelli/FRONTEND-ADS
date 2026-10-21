@@ -1,0 +1,28 @@
+{
+  "name": "lab_7",
+  "version": "0.0.1",
+  "description": "Laboratório 7 da matéria de forntend II do curso de ADS do IFSC-SJ",
+  "keywords": [
+    "javascript"
+  ],
+  "homepage": "https://github.com/IFSC-FE2/fe2-2026-2-labs-202520500158#readme",
+  "bugs": {
+    "url": "https://github.com/IFSC-FE2/fe2-2026-2-labs-202520500158/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IFSC-FE2/fe2-2026-2-labs-202520500158.git"
+  },
+  "license": "UnixCrypt",
+  "author": "Mateus Raffaelli",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "serve": "zappp -p 8080"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "zappp": "^1.0.0"
+  }
+}

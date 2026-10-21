@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node10",
+    "ignoreDeprecations": "6.0",
+    "strict": true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist/js",
+    "rootDir": "src"
+  },
+  "include": ["testes/**/*.ts", "src/**/*.ts"]
+}
