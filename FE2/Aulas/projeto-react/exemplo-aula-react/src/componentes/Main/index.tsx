@@ -7,7 +7,7 @@ const Principal = () => {
         {
             id: 1,
             titulo: 'estudar react',
-            status: 'a fazer'
+            status: 'a fazer' 
         },
         {
             id: 2,

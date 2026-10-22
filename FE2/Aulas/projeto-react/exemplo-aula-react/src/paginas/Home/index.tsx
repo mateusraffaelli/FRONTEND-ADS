@@ -6,11 +6,11 @@ import Footer from "../../componentes/Footer"
 const Home = () => {
 
     return (
-        <>
+        <div className="container">
             <Header titulo="Quadro Kanban"/>
             <Main />
             <Footer />
-        </>
+        </div>
     )
 }
 
