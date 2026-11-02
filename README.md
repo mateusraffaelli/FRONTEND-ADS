@@ -33,4 +33,4 @@
 
 
 ### Projetos
-- [Projeto 01](/FE2/Projeto/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
+- [Projeto 01](/FE2/Projetos/que-time-e-esse) - Jogo Web utilizando React e TypeScript *Que Time É Esse?*
